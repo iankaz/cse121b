@@ -36,3 +36,15 @@ favFoods.push(anotherFavFood);
 
 // Step 5: repeat Step 2
 document.querySelector('#food').innerHTML = favFoods;
+
+// Step 6: remove the first element in the favorite foods array
+favFoods.shift();
+
+// Step 7: repeat Step 2
+document.querySelector('#food').innerHTML = favFoods;
+
+// Step 8: remove the last element in the favorite foods array
+favFoods.pop();
+
+// Step 7: repeat Step 2
+document.querySelector('#food').innerHTML = favFoods;
