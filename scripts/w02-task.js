@@ -23,13 +23,14 @@ document.querySelector('img').setAttribute('src', profileImage);
 /* ARRAYS */
 
 // Step 1: declare and instantiate an array variable to hold your favorite foods
-let favFoods = ['Hotdogs', 'Rice & roast chicken', 'Braai pork'];
+const favFoods = ['Hotdogs', 'Rice & roast chicken', 'Braai pork'];
 
 // Step 2: place the values of the favorite foods variable into the HTML file
 document.querySelector('#food').innerHTML = favFoods;
+food.textContent = favFoods;
 
 // Step 3: declare and instantiate a variable to hold another favorite food
-const anotherFavFood = "Salads";
+let anotherFavFood = "Salads";
 
 // Step 4: add the variable holding another favorite food to the favorite food array
 favFoods.push(anotherFavFood);
