@@ -134,3 +134,36 @@ function add(num1, num2){
     const sumOfMultiplied = sumMultipliedArray(array);
     console.log(sumOfMultiplied)
     document.querySelector("#sumOfMultiplied").textContent = sumOfMultiplied;
+
+    // Get the elements from the HTML document
+var subtotal = document.getElementById("subtotal");
+var member = document.getElementById("member");
+var getTotal = document.getElementById("getTotal");
+var total = document.getElementById("total");
+
+// Define a function to calculate the total due
+function calculateTotal() {
+  // Get the subtotal value as a number
+  var subtotalValue = Number(subtotal.value);
+
+  // Check if the subtotal is valid
+  if (isNaN(subtotalValue) || subtotalValue < 0) {
+    // Display an error message
+    alert("Please enter a valid subtotal");
+  } else {
+    // Initialize the total due as the subtotal
+    var totalDue = subtotalValue;
+
+    // Check if the club member checkbox is checked
+    if (member.checked) {
+      // Apply a 10% discount
+      totalDue = totalDue * 0.9;
+    }
+
+    // Display the total due with two decimal places
+    total.textContent = "$ " + totalDue.toFixed(2);
+  }
+}
+
+// Add an event listener to the get total button
+getTotal.addEventListener("click", calculateTotal);
