@@ -27,9 +27,9 @@ function add(num1, num2){
         return num1 - num2;
     };
     const subtractNumbers = function(){
-        const minuend = parseInt(document.querySelector("#minuend").value);
+        const minuend = parseInt(document.querySelector("#subtract1").value);
         console.log("MINUEND:", minuend)
-        const subtrahend = parseInt(document.querySelector("#subtrahend").value);
+        const subtrahend = parseInt(document.querySelector("#subtract2").value);
         console.log("SUBSTRAHEND:", subtrahend)
     
         const difference = subtract(minuend, subtrahend);
