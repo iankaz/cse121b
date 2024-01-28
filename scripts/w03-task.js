@@ -1,169 +1,90 @@
-/* Lesson 3 */
+/* LESSON 3 - Programming Tasks */
 
 /* FUNCTIONS */
+/* Function Definition - Add Numbers */
 
-// Step 1: Using function declaration, define a function named add that takes two arguments, number1 and number2
-function add(num1, num2){
-    // Step 2: In the function, return the sum of the parameters number1 and number2
-        return num1 + num2;
-    };
-    
-    // Step 3: Step 3: Using function declaration, define another function named addNumbers that gets the values of two HTML form controls with IDs of addend1 and addend2. Pass them to the add function
-    function addNumber(){
-        const firstNum = parseInt(document.querySelector("#addend1").value);
-        console.log("FIRST NUMBER:", firstNum)
-        const secondNum = parseInt(document.querySelector("#addend2").value);
-        console.log("SECOND NUMBER:", secondNum)
-    // Step 4: Assign the return value to an HTML form element with an ID of sum
-        const sum = add(firstNum, secondNum);
-        console.log("SUM:", sum)
-        document.querySelector("#sum").value = sum;
-    };
-    // Step 5: Add a "click" event listener to the HTML button with an ID of addNumbers that calls the addNumbers function
-    document.querySelector("#addNumbers").addEventListener('click', addNumber);
-    
-    // Step 6: Using function expressions, repeat Steps 1-5 with new functions named subtract and subtractNumbers and HTML form controls with IDs of minuend, subtrahend, difference and subtractNumbers
-    const subtract = function(num1, num2) {
-        return num1 - num2;
-    };
-    const subtractNumbers = function(){
-        const minuend = parseInt(document.querySelector("#subtract1").value);
-        console.log("MINUEND:", minuend)
-        const subtrahend = parseInt(document.querySelector("#subtract2").value);
-        console.log("SUBSTRAHEND:", subtrahend)
-    
-        const difference = subtract(minuend, subtrahend);
-        console.log("DIFFERENCE:", difference)
-        document.querySelector("#difference").value = difference;
-    };
-    document.querySelector("#subtractNumbers").addEventListener('click', subtractNumbers);
-    
-    // Step 7: Using arrow functions, repeat Steps 1-5 with new functions named multiply and mulitplyNumbers and HTML form controls with IDs of factor1, factor2, product and multiplyNumbers
-    const multiply = (factor1, factor2) => {
-        return factor1 * factor2;
-    };  
-    const multiplyNumbers = () => {
-        const firstFactor = parseInt(document.querySelector("#factor1").value);
-        console.log("FIRST FACTOR:", firstFactor)
-        const secondFactor = parseInt(document.querySelector("#factor2").value);
-        console.log("SECOND FACTOR:", secondFactor)
-    
-        const product = multiply(firstFactor, secondFactor);
-        console.log("PRODUCT:", product)
-        document.querySelector("#product").value = product;
-    };
-    document.querySelector("#multiplyNumbers").addEventListener('click', multiplyNumbers);
-    
-    // Step 8: Using any of the three function declaration types, repeat Steps 1-5 with new functions named divide and divideNumbers and HTML form controls with IDs of dividend, divisor, quotient and divideNumbers
-    const divide = (num1, num2) => {
-        return num1 / num2;
-    };
-    
-    const divideNumbers = () => {
-        const dividend = parseInt(document.querySelector("#dividend").value);
-        console.log("DIVIDEND:", dividend)
-        const divisor = parseInt(document.querySelector("#divisor").value);
-        console.log("DIVISOR:", divisor)
-    
-        const quotient = divide(dividend, divisor);
-        console.log("QUOTIENT:", quotient)
-        document.querySelector("#quotient").value = quotient;
-    };
-    document.querySelector("#divideNumbers").addEventListener('click', divideNumbers);
-    
-    // Step 9: Test all of the mathematical functionality of the task3.html page.
-    
-    /* BUILT-IN METHODS */
-    
-    // Step 1: Declare and instantiate a variable of type Date to hold the current date
-    let currentDate = new Date();
-    
-    // Step 2: Declare a variable to hold the current year
-    let currentYear
-    // Step 3: Using the variable declared in Step 1, call the built-in getFullYear() method/function and assign it to the variable declared in Step 2
-    currentYear = currentDate.getFullYear();
-    // Step 4: Assign the current year variable to an HTML form element with an ID of year
-    document.querySelector("#year").textContent  = currentYear;
-    
-    /* ARRAY METHODS */
-    
-    // Step 1: Declare and instantiate an array variable to hold the numbers 1 through 25
-    const array = Array.from({length: 25}, (_, i) => i + 1);
-    console.log(array)
-    
-    // Step 2: Assign the value of the array variable to the HTML element with an ID of "array"
-    document.querySelector("#array").textContent = array;
-    
-    // Step 3: Use the filter array method to find all of the odd numbers of the array variable and assign the reult to the HTML element with an ID of "odds" ( hint: % (modulus operartor) )
-    function findOdds(value) {
-        return value %2 != 0;
-    }
-    const oddFiltered = array.filter(findOdds);
-    console.log(oddFiltered)
-    
-    document.querySelector("#odds").textContent = oddFiltered
-    
-    // Step 4: Use the filter array method to find all of the even numbers of the array variable and assign the result to the HTML element with an ID of "evens"
-    function findEvens(value) {
-        return value %2 == 0;
-    }
-    const evenFiltered = array.filter(findEvens);
-    console.log(evenFiltered)
-    document.querySelector("#evens").textContent = evenFiltered
-    
-    // Step 5: Use the reduce array method to sum the array variable elements and assign the result to the HTML element with an ID of "sumOfArray"
-    function getSumOfArray(array) {
-        return array.reduce((acumulator, currentValue) => acumulator + currentValue);
-    }
-    const sumOfArray = getSumOfArray(array);
-    console.log(sumOfArray);
-    document.querySelector("#sumOfArray").textContent = sumOfArray;
-    
-    // Step 6: Use the map array method to multiple each element in the array variable by 2 and assign the result to the HTML element with an ID of "multiplied"
-    function multiplyArrayByTwo(array) {
-        return array.map(num => num * 2);
-    }
-    const multiplied = multiplyArrayByTwo(array);
-    console.log(multiplied)
-    document.querySelector("#multiplied").textContent = multiplied;
-    
-    // Step 7: Use the map and reduce array methods to sum the array elements after multiplying each element by two.  Assign the result to the HTML element with an ID of "sumOfMultiplied"
-    function sumMultipliedArray(array) {
-        return multiplied.reduce((acumulator, currentValue) => acumulator + currentValue);
-    }
-    const sumOfMultiplied = sumMultipliedArray(array);
-    console.log(sumOfMultiplied)
-    document.querySelector("#sumOfMultiplied").textContent = sumOfMultiplied;
+function add(number1 , number2) {return number1 + number2;}
+function addNumbers() {
 
-    // Get the elements from the HTML document
-var subtotal = document.getElementById("subtotal");
-var member = document.getElementById("member");
-var getTotal = document.getElementById("getTotal");
-var total = document.getElementById("total");
+    let addnumber1 = Number(document.querySelector('#add1').value);
+    let addnumber2 = Number(document.querySelector('#add2').value);
 
-// Define a function to calculate the total due
-function calculateTotal() {
-  // Get the subtotal value as a number
-  var subtotalValue = Number(subtotal.value);
-
-  // Check if the subtotal is valid
-  if (isNaN(subtotalValue) || subtotalValue < 0) {
-    // Display an error message
-    alert("Please enter a valid subtotal");
-  } else {
-    // Initialize the total due as the subtotal
-    var totalDue = subtotalValue;
-
-    // Check if the club member checkbox is checked
-    if (member.checked) {
-      // Apply a 10% discount
-      totalDue = totalDue * 0.9;
-    }
-
-    // Display the total due with two decimal places
-    total.textContent = "$ " + totalDue.toFixed(2);
-  }
+    document.querySelector('#sum').value = add(addnumber1 , addnumber2);
 }
 
-// Add an event listener to the get total button
-getTotal.addEventListener("click", calculateTotal);
+document.querySelector('#addNumbers').addEventListener('click', addNumbers);
+
+/* Function Expression - Subtract Numbers */
+function Subtract(number1, number2) {return number1 - number2;}
+function SubtractNumbers() {
+
+    let SubtractNumber1 = Number(document.querySelector('#subtract1').value);
+    let SubtractNumber2 = Number(document.querySelector('#subtract2').value);
+
+    document.querySelector('#difference').value = Subtract(SubtractNumber1, SubtractNumber2);
+}
+
+document.querySelector('#subtractNumbers').addEventListener('click', SubtractNumbers);
+
+/* Arrow Function - Multiply Numbers */
+const multiply = (number1, number2) => number1 * number2;
+const multiplyNumbers = () => {
+
+    let multiplyNumber1 = Number(document.querySelector('#factor1').value);
+    let multiplyNumber2 = Number(document.querySelector('#factor2').value);
+
+    document.querySelector('#product').value = multiply(multiplyNumber1, multiplyNumber2);
+}
+
+document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNumbers);
+
+/* Open Function Use - Divide Numbers */
+const divide = (number1, number2) => number1/number2;
+const divideNumbers = () => {
+
+    let dividend = Number(document.querySelector('#dividend').value);
+    let divisor = Number(document.querySelector('#divisor').value);
+
+    document.querySelector('#quotient').value = divide(dividend, divisor);
+}
+
+document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
+
+/* Decision Structure */
+const getTotal = function() {
+
+    let subtotal = Number(document.getElementById('subtotal').value);
+    let member = document.getElementById('member').checked; 
+                                            
+    if (member == true) {document.getElementById('total').innerHTML = multiply(subtotal, .80)}
+    else if (member == false) {document.getElementById('total').innerHTML = subtotal}
+    
+}
+
+document.querySelector('#getTotal').addEventListener('click', getTotal)
+
+
+/* ARRAY METHODS - Functional Programming */
+/* Output Source Array */
+const array = [ 1,2,3,4,5,6,7,8,9,10,11,12,13 ]
+document.getElementById('array').innerHTML = array;
+
+/* Output Odds Only Array */
+
+document.getElementById('odds').innerHTML = array.filter((i) => i % 2); 
+
+/* Output Evens Only Array */
+
+document.getElementById('evens').innerHTML = array.filter((i) => i % 2 === 0);
+
+/* Output Sum of Org. Array */
+
+document.getElementById('sumOfArray').innerHTML = array.reduce((i, nextValue) => i + nextValue); 
+
+/* Output Multiplied by 2 Array */
+
+document.getElementById('multiplied').innerHTML = array.map((i) => i * 2);
+
+/* Output Sum of Multiplied by 2 Array */
+
+document.getElementById('sumOfMultiplied').innerHTML = (array.map((i) => i * 2)).reduce((i, nextValue) => i + nextValue);
