@@ -16,19 +16,19 @@
 let info = {
     name: "Ian Kazembe",
     photo: "IMG_3803-Edit.jpg",
-    favoriteFoods: ["Burgers and Chips", "Braai Meat", "Chicken", 'Fruit Salad'],
+    favoriteFoods: ["Hamburgers & Chips", "Braai Meat", "Chicken", 'Fruit Salad'],
     hobbies: ["Play Video Games", "Play soccer", "Reading", "Watching TV", 'Fitness'],
     placesLived: [{
-            place: "Sunningdale",
-            timeLived: 18
+            place: "Harare, Zimbabwe",
+            timeLived: 29
         },
         {
-            place: "Mabvuku Tafara",
-            timeLived: 3
+            place: "Sunningdale, Harare",
+            timeLived: 24
         },
         {
-            place: "Greendale",
-            timeLived: 4
+            place: "Dangamvura, Mutare",
+            timeLived: 2
         },
     ]
 }
